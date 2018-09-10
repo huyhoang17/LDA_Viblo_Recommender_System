@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Framgia - Viblo Recommender System</h1>
+
+{% if random_posts %}
+	<h3> Random Posts </h3>
+
+	{% for random_post in random_posts %}
+		<p>{{ random_post.title }}</p>
+		<a href="{{ url_for('show_post', slug=random_post.slug) }}">{{ random_post.url }}</a>
+		<br>
+		<a href="{{ random_post.url }}">Link</a>
+	{% endfor %}
+{% endif %}
+
+{% if main_post %}
+	<h2>Main Post</h2>
+	<p>{{ main_post.title }}</p>
+	<a href="{{ url_for('show_post', slug=main_post.slug) }}">{{ main_post.url }}</a>
+	<br>
+	<a href="{{ main_post.url }}">Link</a>
+{% endif %}
+
+{% if posts %}
+
+	<h3>Related Posts</h3>
+	{% for post in posts %}
+		<p>{{ post.title }}</p>
+		<a href="{{ url_for('show_post', slug=post.slug) }}">{{ post.url }}</a>
+		<br>
+		<a href="{{ post.url }}">Link</a>
+	{% endfor %}
+
+{% endif %}
+
+{% endblock %}
