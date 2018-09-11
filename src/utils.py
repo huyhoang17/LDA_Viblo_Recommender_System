@@ -13,7 +13,6 @@ with open('data/vni_stopwords.txt') as f:
     stopwords = []
     for line in f:
         stopwords.append("_".join(line.strip().split()))
-    logging.INFO("Number of stopwords: {}".format(len(stopwords)))
 
 
 def preprocessing_tags(soup, tags=None):

@@ -7,7 +7,7 @@ import gensim
 from gensim.utils import simple_preprocess
 from sklearn.externals import joblib
 
-from distances import get_most_similar_documents
+from src.distances import get_most_similar_documents
 
 logging.basicConfig(format='%(levelname)s : %(message)s', level=logging.INFO)
 logging.root.level = logging.INFO

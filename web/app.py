@@ -6,11 +6,10 @@ from flask import Flask, jsonify, render_template
 import numpy as np
 import pymongo
 
-from distances import get_most_similar_documents
-from models import make_texts_corpus
-from utils import markdown_to_text
-
 import settings
+from src.distances import get_most_similar_documents
+from src.models import make_texts_corpus
+from src.utils import markdown_to_text
 
 client = pymongo.MongoClient(settings.MONGODB_SETTINGS["host"])
 db = client[settings.MONGODB_SETTINGS["db"]]
@@ -97,7 +96,6 @@ def show_post(slug):
     most_sim_ids = list(get_most_similar_documents(
         doc_distribution, doc_topic_dist))[1:]
 
-    logging.INFO(most_sim_ids)
     most_sim_ids = [int(id_) for id_ in most_sim_ids]
     posts = mongo_col.find({"idrs": {"$in": most_sim_ids}})
     related_posts = [

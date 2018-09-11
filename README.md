@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/huyhoang17/LDA_Viblo_Recommender_System.svg?branch=master)](https://travis-ci.org/huyhoang17/LDA_Viblo_Recommender_System)
+
 Simple Recommender System for Viblo Website using LDA (Latent Dirichlet Allocation)
 ---
 
