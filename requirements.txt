@@ -1,0 +1,12 @@
+gensim
+requests
+beautifulsoup4
+pyvi
+scikit-learn
+numpy
+pandas
+scipy
+matplotlib
+flask
+mistune
+pymongo

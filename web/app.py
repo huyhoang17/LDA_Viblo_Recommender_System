@@ -44,6 +44,7 @@ def load_model():
     doc_topic_dist = joblib.load(
         settings.PATH_DOC_TOPIC_DIST
     )
+    # doc_topic_dist = np.array([np.array(dist) for dist in doc_topic_dist])
 
     return lda_model, corpus, id2word, doc_topic_dist
 
@@ -61,7 +62,7 @@ def ping_pong():
 
 @app.route('/posts/', methods=["GET"])
 def show_posts():
-    idrss = random.sample(range(0, 14157), 10)
+    idrss = random.sample(range(0, mongo_col.count()), 10)
     posts = mongo_col.find({"idrs": {"$in": idrss}})
     random_posts = [
         {

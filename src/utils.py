@@ -9,7 +9,7 @@ logging.basicConfig(format='%(levelname)s : %(message)s', level=logging.INFO)
 logging.root.level = logging.INFO
 
 
-with open('data/vni_stopwords.txt') as f:
+with open('../data/vni_stopwords.txt') as f:
     stopwords = []
     for line in f:
         stopwords.append("_".join(line.strip().split()))

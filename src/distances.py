@@ -12,6 +12,7 @@ def jensen_shannon(query, matrix):
     # lets keep with the p,q notation above
     p = query[None, :].T  # take transpose
     q = matrix.T  # transpose matrix
+
     m = 0.5 * (p + q)
     return np.sqrt(0.5 * (entropy(p, m) + entropy(q, m)))
 

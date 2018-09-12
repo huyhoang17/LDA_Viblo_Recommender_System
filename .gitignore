@@ -3,6 +3,8 @@ data
 notebooks
 models
 temp
+input
+24_collaborativefiltering/python/ml-100k
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -115,3 +117,4 @@ venv.bak/
 .mypy_cache/
 .dmypy.json
 dmypy.json
+
