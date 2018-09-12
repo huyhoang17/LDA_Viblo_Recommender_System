@@ -18,14 +18,24 @@ Reference
 ---
 
 LDA
+- https://www.machinelearningplus.com/nlp/topic-modeling-gensim-python/
+- https://radimrehurek.com/topic_modeling_tutorial/2%20-%20Topic%20Modeling.html
+- https://markroxor.github.io/gensim/static/notebooks/gensim_news_classification.html#topic=1&lambda=1&term=
+- https://nlpforhackers.io/topic-modeling/
+
+Multicore LDA
 - https://rare-technologies.com/multicore-lda-in-python-from-over-night-to-over-lunch/
-- https://miningthedetails.com/blog/python/lda/GensimLDA/
-- https://wellecks.wordpress.com/2014/10/26/ldaoverflow-with-online-lda/
-- https://www.kaggle.com/yohanb/lda-visualized-using-t-sne-and-bokeh
 
 Online Learning LDA
 - https://radimrehurek.com/gensim/models/ldamodel.html#usage-examples
 - https://radimrehurek.com/gensim/wiki.html#latent-dirichlet-allocation
+- https://wellecks.wordpress.com/2014/10/26/ldaoverflow-with-online-lda/
 
 Similarity
 - https://www.kaggle.com/ktattan/lda-and-document-similarity
+
+Visual
+- https://www.kaggle.com/yohanb/lda-visualized-using-t-sne-and-bokeh
+
+Other
+- https://miningthedetails.com/blog/python/lda/GensimLDA/
