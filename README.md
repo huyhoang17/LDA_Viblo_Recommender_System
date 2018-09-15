@@ -3,6 +3,14 @@
 Simple Recommender System for Viblo Website using LDA (Latent Dirichlet Allocation)
 ---
 
+Blog Post
+---
+
+- https://viblo.asia/p/xay-dung-he-thong-goi-y-don-gian-cho-website-viblo-YWOZrgLYlQ0
+
+Command
+---
+
 ```
 export PYTHONPATH="path_to_Recommender_System_Viblo_project"
 ```
