@@ -16,7 +16,7 @@ logging.root.level = logging.INFO
 PATH_DICTIONARY = "models/id2word.dictionary"
 PATH_CORPUS = "models/corpus.mm"
 PATH_LDA_MODEL = "models/LDA.model"
-PATH_DOC_TOPIC_DIST = "model/doc_topic_dist.dat"
+PATH_DOC_TOPIC_DIST = "models/doc_topic_dist.dat"
 
 
 def head(stream, n=10):
@@ -110,9 +110,11 @@ class LDAModel:
         return doc_topic_dist
 
     def fit(self, sentences):
-        self._make_dictionary(sentences)
-        self._make_corpus_bow(sentences)
-        self.lda_model = gensim.models.LdaModel(
+        from itertools import tee
+        sentences_1, sentences_2 = tee(sentences)
+        self._make_dictionary(sentences_1)
+        self._make_corpus_bow(sentences_2)
+        self.lda_model = gensim.models.ldamodel.LdaModel(
             self.corpus, id2word=self.id2word, num_topics=64, passes=5,
             chunksize=100, random_state=42, alpha=1e-2, eta=0.5e-2,
             minimum_probability=0.0, per_word_topics=False
@@ -215,8 +217,8 @@ def main():
     # gensim.corpora.MmCorpus.serialize('path_to_save_file.mm', cospus)
     # load corpus
     # mm_corpus = gensim.corpora.MmCorpus('path_to_save_file.mm')
-    lda_model = gensim.models.LdaModel(
-        cospus, num_topics=32, id2word=id2word, passes=10, chunksize=100
+    lda_model = gensim.models.ldamodel.LdaModel(
+        cospus, num_topics=64, id2word=id2word, passes=10, chunksize=100
     )
     # save model
     # lda_model.save('path_to_save_model.model')
